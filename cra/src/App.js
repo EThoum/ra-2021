@@ -11,48 +11,54 @@ import {
   Components,
   ClassVsFunctions,
   Localisation,
-  HttpRequests
+  HttpRequests,
+  UseRef
 } from './pages/';
 
 const routes = [
   {
-    path:'/http-requests',
-    exact:true,
-    component: HttpRequests 
+    path: '/http-requests',
+    exact: true,
+    component: HttpRequests
   },
   {
-    path:'/components',
-    exact:true,
-    component: Components 
+    path: '/components',
+    exact: true,
+    component: Components
   },
   {
-    path:'/classvsfunctions',
-    exact:true,
-    component: ClassVsFunctions 
+    path: '/classvsfunctions',
+    exact: true,
+    component: ClassVsFunctions
   },
   {
-    path:'/i18n',
-    exact:true,
-    component:  Localisation 
+    path: '/i18n',
+    exact: true,
+    component: Localisation
   },
   {
-    path:'/',
-    exact:true,
-    component: Home 
+    path: '/useRef',
+    exact: true,
+    component: UseRef
+  },
+  {
+    path: '/',
+    exact: true,
+    component: Home
   }
 ]
 
 const Routes = () =>
   <Switch>
     {
-      routes.map((route,index) => <Route path={route.path} exact={route.exact} key={index}>
+      routes.map((route, index) => <Route path={route.path} exact={route.exact} key={index}>
         <route.component />
       </Route>)
     }
   </Switch>
 
 const BackButton = routeProps => (routeProps.location.pathname !== "/")
-  ? <div>
+  ? <div className="pt-3">
     <NavLink className='btn btn-outline-secondary' to="/">Home</NavLink>
   </div>
   : null;
