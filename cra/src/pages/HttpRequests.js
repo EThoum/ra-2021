@@ -5,7 +5,9 @@ import { CustomMap } from '../components/CustomMap';
 const getCountries = () => Axios.get("https://restcountries.com/v3.1/all")
 
 export const HttpRequests = () => {
+    // equivalent de setState()
     const [countries, setCountries] = useState([]);
+    // equivalent de componentDidMount()
     useEffect(
         () => getCountries()
             .then(

@@ -6,9 +6,12 @@ export const CustomMap = props => {
         (country, index) => {
             const flagIcon = new L.icon({
                 iconUrl: country.flags.svg,
-                iconSize: [25, 20]
+                iconSize: [50, 33]
             })
-            return <Marker position={country.latlng} key={index} icon={flagIcon}>
+            return <Marker
+                position={country.latlng}
+                key={index}
+                icon={flagIcon}>
                 <Popup>
                     {country.name.common}
                 </Popup>
