@@ -13,7 +13,8 @@ export const CustomMap = props => {
                 key={index}
                 icon={flagIcon}>
                 <Popup>
-                    {country.name.common}
+                    {country.name.common},
+                    <p>Population : {country.population} habitants</p>
                 </Popup>
             </Marker>
         }

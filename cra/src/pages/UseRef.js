@@ -16,7 +16,12 @@ export const UseRef = () => {
         VanillaTilt.init(domRef.current, vanillaTiltOptions);
     }, [])
 
-    return <div ref={domRef} className="p-3 bg-info text-light">
-        UseRef
-    </div>
+    return <>
+    <h1>UseRef</h1>
+        <div ref={domRef} className="p-3 bg-info text-light">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis velit enim harum minus delectus sit aperiam obcaecati odio repudiandae quo ipsa distinctio cum quaerat eveniet suscipit beatae, deserunt, culpa rem.
+            </p>
+        </div>
+    </>
 };
