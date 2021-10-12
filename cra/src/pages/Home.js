@@ -16,17 +16,18 @@ const links = [
         label: 'Http requests'
     },
 ];
+
+const Links = () => links.map(
+    (link, index) => <Link
+        key={'link-' + index}
+        className='list-group-item list-group-item'
+        to={link.to}>
+        {link.label}
+    </Link>);
+
 export const Home = () => <div>
     <h1>React Avancé</h1>
     <div className="list-group">
-        {
-            links.map(
-                (link, index) => <Link
-                key={'link-'+index}
-                className='list-group-item list-group-item'
-                to={link.to}>
-                {link.label}
-            </Link>)
-        }
+        <Links />
     </div>
 </div>;
