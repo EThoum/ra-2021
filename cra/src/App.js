@@ -1,7 +1,8 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  NavLink
 } from "react-router-dom";
 
 import './styles/main.scss';
@@ -9,14 +10,15 @@ import './styles/main.scss';
 import {
   Home,
   Components,
-  ClassVsFunctions
+  ClassVsFunctions,
+  Localisation
 } from './pages/';
 
 
 const App = () => {
   return (
     <Router>
-      <div className="container">
+      <div className="container py-3">
         <Switch>
           <Route path='/components'>
             <Components />
@@ -24,10 +26,15 @@ const App = () => {
           <Route path='/classvsfunctions'>
             <ClassVsFunctions />
           </Route>
+          <Route path='/i18n'>
+            <Localisation />
+          </Route>
           <Route path='/'>
             <Home />
           </Route>
         </Switch>
+        <br />
+        <NavLink to="/">Home</NavLink>
       </div>
 
     </Router>
