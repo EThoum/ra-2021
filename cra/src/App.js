@@ -1,27 +1,36 @@
-import { useState } from 'react';
-
-import { Paragraphe } from './Paragraphe';
-import { ParagrapheClass } from './ParagrapheClass';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import './styles/main.scss';
 
+import {
+  Home,
+  Components,
+  ClassVsFunctions
+} from './pages/';
 
-function App(props) {
-  const [count, setCount] = useState(0);
 
-  const onClickHandler = () => {
-    setCount(prevcount => prevcount + 1);
-  }
-
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>{props.text}</h1>
-        <Paragraphe {...props} onClickHandler={onClickHandler} />
-        <ParagrapheClass></ParagrapheClass>
-        {count}
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <Switch>
+          <Route path='/components'>
+            <Components />
+          </Route>
+          <Route path='/classvsfunctions'>
+            <ClassVsFunctions />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+
+    </Router>
   );
 }
 
