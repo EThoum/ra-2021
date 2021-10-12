@@ -6,12 +6,11 @@ import {
 } from "react-router-dom";
 
 import './styles/main.scss';
-
 import {
   Home,
   Components,
   ClassVsFunctions,
-  Localisation, 
+  Localisation,
   HttpRequests
 } from './pages/';
 
@@ -20,6 +19,7 @@ const BackButton = routeProps => (routeProps.location.pathname !== "/")
     <NavLink className='btn btn-outline-secondary' to="/">Home</NavLink>
   </div>
   : null;
+
 const App = () => {
   return (
     <Router>
@@ -41,7 +41,7 @@ const App = () => {
             <Home />
           </Route>
         </Switch>
-        <Route render={(routeProps) => <BackButton {...routeProps } />} />
+        <Route render={(routeProps) => <BackButton {...routeProps} />} />
       </div>
 
     </Router>
