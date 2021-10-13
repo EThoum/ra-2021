@@ -1,10 +1,18 @@
-import { Button } from "./buttons";
+import PropsType from 'prop-types';
 
-const Heart = () => <span>🎈</span>;
+export const Paragraphe = (props) => {
+    return <>
+        <h1>{props.title}</h1>
+        <p>
+        </p>
+    </>
+};
 
-export const Paragraphe = (props) =>  <p>
-    Edit <code>src/App.js</code> and save to reload.<br />
-    <Button icon={<Heart />} outline={false} onClickHandler={props.onClickHandler}>
-        {props.text}
-    </Button>
-</p>;
+Paragraphe.propTypes = {
+    title : PropsType.string.isRequired 
+}
+
+
+Paragraphe.defaultProps = {
+    text: 'Texte par defaultProps'
+}

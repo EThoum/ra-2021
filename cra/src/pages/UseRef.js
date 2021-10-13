@@ -11,9 +11,15 @@ const vanillaTiltOptions = {
 export const UseRef = () => {
     const domRef = useRef(null);
 
+    // eq. componentDidMount
     useEffect(() => {
-        console.log(domRef.current);
-        VanillaTilt.init(domRef.current, vanillaTiltOptions);
+        const tiltRef = domRef.current;
+        VanillaTilt.init(tiltRef, vanillaTiltOptions);
+        // 'return' eq. componentWillUnmount
+        return()=>{
+            console.log("Destroy vanilla-tilt here !");
+            tiltRef.VanillaTilt.destroy();
+        }
     }, [])
 
     return <>
